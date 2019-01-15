@@ -1,0 +1,26 @@
+{
+  "name": "change-style-vars",
+  "version": "1.0.1",
+  "description": "postcss plugin。To change the value of the sass or less variable",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {
+    "postcss": "^7.0.11",
+    "postcss-less": "^3.1.1",
+    "postcss-scss": "^2.0.0"
+  },
+  "scripts": {
+    "build": "tsc",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mind029/cssAdapter.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mind029/cssAdapter/issues"
+  },
+  "homepage": "https://github.com/mind029/cssAdapter#readme"
+}
