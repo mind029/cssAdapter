@@ -5,7 +5,7 @@ To change the value of the sass or less variable
 
 ## 用法
 
-```
+```js
 const changeVars = require('change-style-vars')
 
 let lessStyle = `
