@@ -2,7 +2,7 @@
   "name": "change-style-vars",
   "version": "1.0.1",
   "description": "scss、less util。To change the value of the sass or less variable 。and render to css",
-  "main": "index.js",
+  "main": "adapter.js",
   "dependencies": {
     "less": "^3.9.0",
     "node-sass": "^4.11.0",

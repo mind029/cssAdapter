@@ -14,7 +14,6 @@ let variable = {
 }
 
 async function start() {
-  console.time('vic')
   await style.changeVars(styleCss, variable)
   let renderCssResult = await style.toCss()
   // assetsPath 生成静态资源文件目录
@@ -24,7 +23,6 @@ async function start() {
   ]
   let rs = await style.postcssUrl(renderCssResult.css, urlOption)
   fs.writeFileSync(path.resolve('test','scssTheme','dist') + '/theme.css', rs.css)
-  console.timeEnd('vic')
 }
 
 start()

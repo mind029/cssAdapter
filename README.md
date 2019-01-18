@@ -5,47 +5,34 @@ To change the value of the sass or less variable
 
 ## 用法
 
-```
-const changeVars = require('change-style-vars')
+```js
+const StyleFile = require('./adapter')
+const fs = require('fs')
+const path = require('path')
+const style = new StyleFile({
+  language: 'scss',
+  from: 'test/scssTheme/index.scss',
+  to: 'test/scssTheme/dist/theme.css'
+})
 
-let lessStyle = `
-@nice-blue: #5B83AD;
-@light-blue: @nice-blue + #111;
-`
 
-let lessOpts = {
-  "language": "less",
-  "variable": {
-    "@nice-blue": "red"
-  }
-}
-
-let scssStyle = `
-$--color-success: #67c23a !default;
-$--color-warning: #e6a23c !default;
-$--color-danger: #f56c6c !default;
-$--color-info: #909399 !default;
-`
-
-let scssOpts = {
-  "language": "scss",
-  "variable": {
-    "$--color-success": "red"
-  }
+let styleCss = fs.readFileSync('./test/scssTheme/index.scss')
+let variable = {
+  '$--color-white': '#fff'
 }
 
 async function start() {
-  let lessResult = await changeVars(lessStyle, lessOpts)
-  console.log(lessResult.css)
-
-  let scssResult = await changeVars(scssStyle, scssOpts)
-  console.log(scssResult.css)
+  await style.changeVars(styleCss, variable)
+  let renderCssResult = await style.toCss()
+  // assetsPath 生成静态资源文件目录
+  const urlOption = [
+    { filter: /\.ttf$/, url: 'copy', useHash: true, assetsPath: path.resolve('test','scssTheme', 'dist','fonts') },
+    { filter: /\.woff$/, url: 'copy', useHash: true, assetsPath: path.resolve('test','scssTheme', 'dist','fonts') }
+  ]
+  let rs = await style.postcssUrl(renderCssResult.css, urlOption)
+  fs.writeFileSync(path.resolve('test','scssTheme','dist') + '/theme.css', rs.css)
 }
 
 start()
 
 ```
-
-## 如何转换成 css
-
-调用 node-sass、less.js 转换成 css
