@@ -3,7 +3,6 @@ const scss = require('postcss-scss');
 const less = require('postcss-less');
 const changePlugin = require('./postcss-change-vars')
 const easyImport = require('postcss-easy-import')
-const url = require('postcss-url')
 const nodeSass = require('node-sass')
 const nodeLess = require('less');
 
