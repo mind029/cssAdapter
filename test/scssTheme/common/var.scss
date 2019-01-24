@@ -14,6 +14,7 @@ $--color-transition-base: color .2s cubic-bezier(.645,.045,.355,1) !default;
 $--color-white: #fff !default;
 $--color-black: #000 !default;
 
+// 全局主色调
 $--color-primary: #409EFF !default;
 $--color-primary-light-1: mix($--color-white, $--color-primary, 10%) !default; /* 53a8ff */
 $--color-primary-light-2: mix($--color-white, $--color-primary, 20%) !default; /* 66b1ff */
@@ -25,9 +26,13 @@ $--color-primary-light-7: mix($--color-white, $--color-primary, 70%) !default; /
 $--color-primary-light-8: mix($--color-white, $--color-primary, 80%) !default; /* d9ecff */
 $--color-primary-light-9: mix($--color-white, $--color-primary, 90%) !default; /* ecf5ff */
 
+// 全局成功颜色
 $--color-success: #0a884d !default;
+// 全局警告颜色
 $--color-warning: #ac192d !default;
+// 全局危险颜色
 $--color-danger: #939396;
+// 全局信息颜色
 $--color-info: #dd1f78 !default;
 
 $--color-success-light: mix($--color-white, $--color-success, 80%) !default;
@@ -52,6 +57,7 @@ $--link-hover-color: $--color-primary !default;
 
 /* Background
 -------------------------- */
+// 全局默认背景色
 $--background-color-base: #f5f7fa !default;
 
 /* Border
@@ -90,6 +96,7 @@ $--font-line-height-primary: 24px !default;
 
 /* Size
 -------------------------- */
+// 全局字体默认大小
 $--size-base: 14px !default;
 
 /* z-index
@@ -100,6 +107,7 @@ $--index-popper: 2000 !default;
 
 /* Disable base
 -------------------------- */
+// 全局禁用背景色
 $--disabled-fill-base: $--background-color-base !default;
 $--disabled-color-base: $--color-text-placeholder !default;
 $--disabled-border-base: $--border-color-light !default;
@@ -259,17 +267,27 @@ $--alert-icon-large-size: 28px !default;
 
 /* Message Box
 -------------------------- */
+// 对话框默认宽度
 $--msgbox-width: 420px !default;
+// 对话框圆角值
 $--msgbox-border-radius: 4px !default;
+// 对话框字体大小
 $--msgbox-font-size: $--font-size-large !default;
+// 对话框内容字体大小
 $--msgbox-content-font-size: $--font-size-base !default;
+// 对话框文字颜色
 $--msgbox-content-color: $--color-text-regular !default;
+// 对话框错误是字体大小
 $--msgbox-error-font-size: 12px !default;
+// 对话框内边距大小
 $--msgbox-padding-primary: 15px !default;
-
+// 对话框成功图标颜色
 $--msgbox-success-color: $--color-success !default;
+// 对话框信息图标颜色
 $--msgbox-info-color: $--color-info !default;
+// 对话框警告图标颜色
 $--msgbox-warning-color: $--color-warning !default;
+// 对话框危险图标颜色
 $--msgbox-danger-color: $--color-danger !default;
 
 /* Message
